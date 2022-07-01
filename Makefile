@@ -29,7 +29,7 @@ SHELL := /bin/bash
 # Runs all tests together. Can be executed with `-j2` for two parallel running tests
 
 # make up
-# Starts all Lagoon Services at once, usefull for local development or just to start all of them.
+# Starts all Lagoon Services at once, useful for local development or just to start all of them.
 
 # make logs
 # Shows logs of Lagoon Services (aka docker-compose logs -f)
@@ -190,12 +190,12 @@ versioned-images := 		php-7.4-fpm \
 							python-3.8 \
 							python-3.9 \
 							python-3.10 \
-							node-12 \
-							node-12-builder \
 							node-14 \
 							node-14-builder \
 							node-16 \
 							node-16-builder \
+							node-18 \
+							node-18-builder \
 							solr-7.7 \
 							solr-7.7-drupal \
 							solr-7 \
@@ -209,8 +209,11 @@ versioned-images := 		php-7.4-fpm \
 							logstash-6 \
 							logstash-7 \
 							postgres-12 \
+							postgres-12-drupal \
 							postgres-13 \
+							postgres-13-drupal \
 							postgres-14 \
+							postgres-14-drupal \
 							redis-6 \
 							redis-6-persistent \
 							mariadb-10.5 \
@@ -277,16 +280,16 @@ build/php-7.4-cli-drupal: build/php-7.4-cli
 build/php-8.0-cli-drupal: build/php-8.0-cli
 build/php-8.1-cli-drupal: build/php-8.1-cli
 build/python-3.7 build/python-3.8 build/python-3.9 build/python-3.10: build/commons
-build/node-12 build/node-14 build/node-16: build/commons
-build/node-12-builder: build/node-12
+build/node-14 build/node-16 build/node-18: build/commons
 build/node-14-builder: build/node-14
 build/node-16-builder: build/node-16
+build/node-18-builder: build/node-18
 build/solr-7.7: build/commons
 build/solr-7.7-drupal: build/solr-7.7
 build/elasticsearch-6 build/elasticsearch-7 build/kibana-6 build/kibana-7 build/logstash-6 build/logstash-7: build/commons
 build/postgres-11 build/postgres-12 build/postgres-13 build/postgres-14: build/commons
 build/postgres-11-ckan build/postgres-11-drupal: build/postgres-11
-build/postgres-14-drupal: build/postgres-12
+build/postgres-12-drupal: build/postgres-12
 build/postgres-13-drupal: build/postgres-13
 build/postgres-14-drupal: build/postgres-14
 build/redis-5 build/redis-6: build/commons

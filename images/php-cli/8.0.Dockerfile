@@ -6,7 +6,7 @@ LABEL org.opencontainers.image.source="https://github.com/uselagoon/lagoon-image
 
 ENV LAGOON=cli
 
-COPY --from=composer:2.2.12 /usr/bin/composer /usr/local/bin/composer
+COPY --from=composer:2.3.7 /usr/bin/composer /usr/local/bin/composer
 
 RUN apk add --no-cache git \
         unzip \
@@ -22,7 +22,7 @@ RUN apk add --no-cache git \
         mongodb-tools \
         openssh-sftp-server \
         findutils \
-        nodejs-current \
+        nodejs-current=~18 \
         npm \
         yarn \
     && ln -s /usr/lib/ssh/sftp-server /usr/local/bin/sftp-server \
